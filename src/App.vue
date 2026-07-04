@@ -1,11 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Icon } from '@iconify/vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="app-container">
+    <div class="package-icon">
+      <Icon icon="line-md:account"></Icon>
+    </div>
+    <div class="package-style w-100 h-100 bg-green-300"></div>
+    <div class="package-component">
+      <el-button type="primary">Button</el-button>
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.app-container {
+  width: 500px;
+  height: 500px;
+  background-color: skyblue;
+}
+</style>
