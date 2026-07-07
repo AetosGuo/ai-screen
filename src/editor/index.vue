@@ -4,6 +4,7 @@ import ToolBarRight from '@/editor/toolbar/ToolBarRight.vue'
 import { useEditorStore } from '@/stores/editor.ts'
 import { computed } from 'vue'
 import MaterialPanel from '@/editor/panels/material/index.vue'
+import LayerPanel from '@/editor/layer/index.vue'
 
 defineOptions({
   name: 'ScreenEditor',
@@ -27,16 +28,13 @@ const attrWidth = computed(() => (editorStore.panelVisible.attr ? '248px' : '0')
       <MaterialPanel
         class="editor-material w-248 overflow-hidden transition-all"
         :style="{ width: materialWidth }"
-      >
-        物料
-      </MaterialPanel>
+      />
       <!--      图层-->
-      <aside
+      <LayerPanel
         class="editor-layer w-124 overflow-hidden transition-all"
         :style="{ width: layerWidth }"
-      >
-        图层
-      </aside>
+      />
+
       <!--      画布-->
       <div class="editor-canvas flex-1">画布</div>
       <!--      属性-->
