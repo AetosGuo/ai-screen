@@ -3,6 +3,7 @@ import ToolBarLeft from '@/editor/toolbar/ToolBarLeft.vue'
 import ToolBarRight from '@/editor/toolbar/ToolBarRight.vue'
 import { useEditorStore } from '@/stores/editor.ts'
 import { computed } from 'vue'
+import MaterialPanel from '@/editor/panels/material/index.vue'
 
 defineOptions({
   name: 'ScreenEditor',
@@ -23,12 +24,12 @@ const attrWidth = computed(() => (editorStore.panelVisible.attr ? '248px' : '0')
     </header>
     <main class="editor-main flex">
       <!--      物料-->
-      <aside
+      <MaterialPanel
         class="editor-material w-248 overflow-hidden transition-all"
         :style="{ width: materialWidth }"
       >
         物料
-      </aside>
+      </MaterialPanel>
       <!--      图层-->
       <aside
         class="editor-layer w-124 overflow-hidden transition-all"
@@ -48,11 +49,10 @@ const attrWidth = computed(() => (editorStore.panelVisible.attr ? '248px' : '0')
 
 <style scoped lang="scss">
 .editor-container {
-  --border-color: #334151;
-  background: #1b2346;
+  background: var(--app-bg-color);
 
   .editor-header {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--app-border-color);
   }
 
   .editor-main {
@@ -61,11 +61,11 @@ const attrWidth = computed(() => (editorStore.panelVisible.attr ? '248px' : '0')
 
   .editor-material,
   .editor-layer {
-    border-right: 1px solid var(--border-color);
+    border-right: 1px solid var(--app-border-color);
   }
 
   .editor-attr {
-    border-left: 1px solid var(--border-color);
+    border-left: 1px solid var(--app-border-color);
   }
 }
 </style>

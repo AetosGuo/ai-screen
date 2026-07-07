@@ -27,11 +27,17 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
 
-    tailwindcss()
+    tailwindcss(),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: { additionalData: "@use '@/styles/function.scss' as *;" },
     },
   },
 })
